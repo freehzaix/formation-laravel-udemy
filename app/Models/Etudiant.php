@@ -17,7 +17,7 @@ class Etudiant extends Model
     ];
 
     public function classes(): BelongsTo{
-        return $this->belongsTo(Classe::class);
+        return $this->belongsTo(Classe::class, 'classe_id');
     }
 
 }

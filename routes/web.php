@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClasseController;
+use App\Http\Controllers\EtudiantController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
@@ -26,3 +27,7 @@ Route::post('/classe/add', [ClasseController::class, 'add'])->name('classe.add')
 Route::get('/classe/{id}', [ClasseController::class, 'show'])->name('classe.show');
 Route::post('/classe/edit', [ClasseController::class, 'edit'])->name('classe.edit');
 Route::get('/classe/delete/{id}', [ClasseController::class, 'delete'])->name('classe.delete');
+
+//Etudiant
+Route::get('/etudiant', [EtudiantController::class, 'index'])->name('etudiant.index');
+Route::post('/etudiant/add', [EtudiantController::class, 'add'])->name('etudiant.add');
