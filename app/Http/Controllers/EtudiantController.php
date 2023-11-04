@@ -47,7 +47,7 @@ class EtudiantController extends Controller
     
     }
 
-    //le fonction edit pour modifier les informations d'un étudiant
+    //la fonction edit pour modifier les informations d'un étudiant
     public function edit(Request $request)
     {
         $etudiant = Etudiant::find($request->id);
@@ -57,6 +57,15 @@ class EtudiantController extends Controller
         $etudiant->update();
 
         return back()->with('status', 'L\'étudiant a bien été modifié.');
+    }
+
+    //La fonction delete pour supprimer un étudiant
+    public function delete($id)
+    {
+        $etudiant = Etudiant::find($id);
+        $etudiant->delete();
+
+        return back()->with('status', 'L\'étudiant a bien été supprimé.');
     }
 
 }
