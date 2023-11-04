@@ -31,3 +31,5 @@ Route::get('/classe/delete/{id}', [ClasseController::class, 'delete'])->name('cl
 //Etudiant
 Route::get('/etudiant', [EtudiantController::class, 'index'])->name('etudiant.index');
 Route::post('/etudiant/add', [EtudiantController::class, 'add'])->name('etudiant.add');
+Route::get('/etudiant/{id}', [EtudiantController::class, 'show'])->name('etudiant.show');
+Route::post('/etudiant/edit', [EtudiantController::class, 'edit'])->name('etudiant.edit');

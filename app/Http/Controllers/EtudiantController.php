@@ -36,4 +36,27 @@ class EtudiantController extends Controller
 
     }
 
+    //La fonction show pour afficher la page de modification
+    //d'un étudiant
+    public function show($id)
+    {
+        $etudiant = Etudiant::find($id);
+        $classe = Classe::find($etudiant->classe_id);
+
+        return view("etudiant.show", compact('etudiant', 'classe'));
+    
+    }
+
+    //le fonction edit pour modifier les informations d'un étudiant
+    public function edit(Request $request)
+    {
+        $etudiant = Etudiant::find($request->id);
+        $etudiant->nom = $request->nom;
+        $etudiant->prenom = $request->prenom;
+        $etudiant->classe_id = $request->classe_id;
+        $etudiant->update();
+
+        return back()->with('status', 'L\'étudiant a bien été modifié.');
+    }
+
 }

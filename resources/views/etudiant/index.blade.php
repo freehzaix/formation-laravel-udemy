@@ -55,7 +55,7 @@
                     <td>{{ $item->prenom }}</td>
                     <td>{{ $item->classes->nom_classe }}</td>
                     <td>
-                        <a href="#" class="btn btn-primary">Modifier</a>
+                        <a href="{{ route('etudiant.show', $item->id) }}" class="btn btn-primary">Modifier</a>
                         <a href="#" class="btn btn-danger">Supprimer</a>
                     </td>
                 </tr>
